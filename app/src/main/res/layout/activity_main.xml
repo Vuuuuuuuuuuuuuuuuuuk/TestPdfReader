@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
-  <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/imageView"/>
-</LinearLayout>
+    <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+        <HorizontalScrollView android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/imageView"
+      android:contentDescription="@null"/>
+        </HorizontalScrollView>
+    </ScrollView>
+    <Button
+      android:text="P-"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" android:id="@+id/buttonPm"
+      app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+    <Button
+      android:text="P+"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" android:id="@+id/buttonPp"
+      app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="8dp"
+      app:layout_constraintStart_toEndOf="@+id/buttonPm"/>
+    <Button
+      android:text="Z-"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" android:id="@+id/buttonZm"
+      app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/buttonPp"/>
+    <Button
+      android:text="Z+"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" android:id="@+id/buttonZp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/buttonZm"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
