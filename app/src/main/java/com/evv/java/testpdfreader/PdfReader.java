@@ -39,6 +39,11 @@ public class PdfReader {
     zoom = 1.0f;
   }
 
+  void createFromExternalStorage(String path) throws IOException{
+    File file = new File(path);
+    pdfRenderer = new PdfRenderer(ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY));
+  }
+
   void createFromRaw(int id) throws IOException{
     File fileCopy = new File(context.getCacheDir(), "sample.pdf");
     copyToCache(fileCopy, context.getResources().openRawResource(id));
